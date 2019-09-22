@@ -1,0 +1,80 @@
+body {
+    background-image: url(house.jpg);
+    /*
+    background: green; */
+    background-size: cover;
+    margin: auto;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    left: 31.5%;
+    text-align: center;
+    font-size: 7vh;
+}
+
+div {
+    vertical-align: top;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+.board {
+    border: 1px solid black;
+}
+
+.listeners {
+    position: absolute;
+    left: 33vw;
+    top: 20vh;
+    display: flex;
+}
+
+.current {
+    color: rgb(207, 203, 207);
+    background-color: rgb(2, 2, 2);
+    border-radius: 5px;
+}
+
+.cross {
+    background-image: url('https://placedog.net/500');
+    background-size: cover;
+}
+
+.zero {
+    background-image: url('http://placekitten.com/g/200/195');
+    background-size: cover;
+}
+
+.score-zeros {
+    position: absolute;
+    left: 15vw;
+    top: 25vh;
+    font-size: 5vh;
+    height: 5vh;
+    width: 6vw;
+}
+
+.score-crosses {
+    position: absolute;
+    left: 15vw;
+    top: 50vh;
+    font-size: 5vh;
+    height: 6vh;
+    width: 7vw;
+}
+
+button {
+    position: absolute;
+    background-image: url('515.jpeg');
+    background-size: cover;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 15vh;
+    width: 15vw;
+    left: 4vw;
+    top: 79vh;
+    font-size: 3vh;
+}
