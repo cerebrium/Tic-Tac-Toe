@@ -1,4 +1,5 @@
 const CountCont = (function() {
+    // ************************************* private data **************************************
     let Data = {
         turnCounter : 0,
         crosses : 0,
@@ -6,6 +7,7 @@ const CountCont = (function() {
         playing : 0,
     }
 
+    // ************************************* Public data **************************************
     return {
         getData : function () {
             return Data;
@@ -32,6 +34,7 @@ const CountCont = (function() {
 const UICont = (function() {
 
     // ************************************* Query Selectors **************************************
+    // ************************************* Private UI **************************************
     const DOM = {
         resetButton : document.querySelector('.reset-button'),
         crossScore : document.querySelector('.score-crosses'),
@@ -51,6 +54,7 @@ const UICont = (function() {
         bottom_right : document.querySelector('.bottom-right'),
     }
 
+    // ************************************* setting Score **************************************
     let crossesWon = function (score) {
         DOM.crossScore.textContent = `Dogs: ${score}`;
         
@@ -59,6 +63,8 @@ const UICont = (function() {
     let zerosWon = function (score) {
         DOM.zeroesScore.textContent = `Cats: ${score}`;
     }
+
+    // ************************************* resetting classes **************************************
 
     let reset = function () {
         DOM.upper_left.classList.remove('zero');
@@ -146,7 +152,7 @@ const UICont = (function() {
     // title.addEventListener('click', function() {
     //     console.log('click');
     // })
-    // ************************************* Query Selectors **************************************
+    // ************************************* public returning **************************************
     return {
         returnDOM : function () {
             return DOM;
@@ -168,6 +174,7 @@ const UICont = (function() {
 
 })();
 
+// ************************************* Controller **************************************
 const controller = (function (Count, UI) {
 
     const DOM = UI.returnDOM();
@@ -176,7 +183,7 @@ const controller = (function (Count, UI) {
     const returnZeroes = UI.returnZeroes()
     const reset = UI.returnReset();
 
-
+// ************************************* checking for tic-tac-toe **************************************
     let checkWin = function () {
         // rows zeroes
         if (DOM.upper_left.classList.contains('cross') && DOM.upper_middle.classList.contains('cross') && DOM.upper_right.classList.contains('cross')) {
@@ -258,6 +265,7 @@ const controller = (function (Count, UI) {
         }
     }
 
+    // ************************************* button that resets **************************************
     const resetButton = function () {
         DOM.resetButton.addEventListener('click', function(event) {
             reset();
@@ -274,6 +282,7 @@ const controller = (function (Count, UI) {
         })
     }
 
+    // ************************************* toggling highlighting **************************************
     let changeSide = function() {
         if (data.turnCounter % 2 !== 0) {
             DOM.zeroesScore.classList.remove('current')
@@ -284,6 +293,7 @@ const controller = (function (Count, UI) {
         }
     }
 
+    // ************************************* On click calling everything **************************************
     const eventListeners = function () {
         DOM.eListeners.addEventListener('click', function(event) {
             if (data.playing % 2 === 0) {
@@ -317,4 +327,5 @@ const controller = (function (Count, UI) {
     }
 })(CountCont, UICont)
 
+// ************************************* Initilize and call everything **************************************
 controller.init();
