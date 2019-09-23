@@ -1,3 +1,7 @@
+/*********************************************************************************
+ * *******************************   Data   ******************************************
+ ************************************************************************************/
+
 const CountCont = (function() {
     // ************************************* private data **************************************
     let Data = {
@@ -31,6 +35,10 @@ const CountCont = (function() {
     }
 })();
 
+/*********************************************************************************
+ * *******************************   UI    ******************************************
+ ************************************************************************************/
+
 const UICont = (function() {
 
     // ************************************* Query Selectors **************************************
@@ -40,9 +48,9 @@ const UICont = (function() {
         crossScore : document.querySelector('.score-crosses'),
         zeroesScore : document.querySelector('.score-zeros'),
         eListeners : document.querySelector('.listeners'),
-        bottom : document.querySelector('bottom'),
-        middle : document.querySelector('middle'),
-        top : document.querySelector('upper'),
+        bottom : document.querySelector('.bottom'),
+        middle : document.querySelector('.middle'),
+        top : document.querySelector('.upper'),
         upper_left : document.querySelector('.upper-left'),
         upper_middle : document.querySelector('.upper-middle'),
         upper_right : document.querySelector('.upper-right'),
@@ -174,7 +182,10 @@ const UICont = (function() {
 
 })();
 
-// ************************************* Controller **************************************
+/*********************************************************************************
+ * *******************************   Controller    ******************************************
+ ************************************************************************************/
+
 const controller = (function (Count, UI) {
 
     const DOM = UI.returnDOM();

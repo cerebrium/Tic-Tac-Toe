@@ -28,7 +28,7 @@ div {
     position: absolute;
     left: 33vw;
     top: 20vh;
-    display: flex;
+    display: inline-flex;
 }
 
 .current {
