@@ -195,6 +195,8 @@ const controller = (function (Count, UI) {
     const reset = UI.returnReset();
 
 // ************************************* checking for tic-tac-toe **************************************
+    
+
     let checkWin = function () {
         // rows zeroes
         if (DOM.upper_left.classList.contains('cross') && DOM.upper_middle.classList.contains('cross') && DOM.upper_right.classList.contains('cross')) {
